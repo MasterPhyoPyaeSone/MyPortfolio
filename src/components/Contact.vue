@@ -17,7 +17,8 @@
               class="contact-method"
             >
               <div class="method-icon" :style="{ background: method.color }">
-                <span class="icon-emoji">{{ method.icon }}</span>
+                <!-- <span class="icon-emoji">{{ method.icon }}</span> -->
+                <img :src="method.image" alt="" class="project-image-placeholder">
               </div>
               <div class="method-details">
                 <h4>{{ method.name }}</h4>
@@ -89,32 +90,30 @@ export default {
       contactMethods: [
         {
           name: 'Email',
-          value: 'your.email@example.com',
-          link: 'mailto:your.email@example.com',
-          icon: '📧',
+          value: 'phyo097800@gamil.com',
+          image:require('@/assets/email.png'),
           color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
         },
         {
-          name: 'LinkedIn',
-          value: 'linkedin.com/in/yourprofile',
-          link: 'https://linkedin.com',
-          icon: '💼',
+          name: 'Viber',
+          value: '09950336142',
+          image: require('@/assets/viber.png'),
           color: 'linear-gradient(135deg, #0077b5 0%, #00a0dc 100%)'
         },
         {
-          name: 'GitHub',
-          value: 'github.com/yourusername',
-          link: 'https://github.com',
-          icon: '💻',
-          color: 'linear-gradient(135deg, #333 0%, #24292e 100%)'
+          name: 'Telegram',
+          value: '09950336142',
+          image: require('@/assets/telegram.png'),
+          color: 'linear-gradient(135deg, #1da1f2 0%, #0d95e8 100%)'
         },
         {
-          name: 'Twitter',
-          value: '@yourusername',
-          link: 'https://twitter.com',
-          icon: '🐦',
-          color: 'linear-gradient(135deg, #1da1f2 0%, #0d95e8 100%)'
-        }
+          name: 'GitHub',
+          value: 'github.com/MasterPhyoPyaeSone',
+          link: 'https://github.com/MasterPhyoPyaeSone',
+          image: require('@/assets/git.png'),
+          color: 'linear-gradient(135deg, #333 0%, #24292e 100%)'
+        },
+        
       ],
       form: {
         name: '',
@@ -216,7 +215,15 @@ export default {
   flex-direction: column;
   gap: 20px;
 }
-
+.project-image-placeholder {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 .contact-method {
   display: flex;
   align-items: center;

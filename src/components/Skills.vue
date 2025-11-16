@@ -15,7 +15,7 @@
         >
           <div class="skill-icon">
             <div class="icon-wrapper" :style="{ background: skill.color }">
-              <span class="icon-emoji">{{ skill.icon }}</span>
+              <img :src="skill.icon" :alt="skill.name" class="skill-image">
             </div>
           </div>
           <h3 class="skill-name">{{ skill.name }}</h3>
@@ -44,45 +44,45 @@ export default {
       skills: [
         {
           name: 'Frontend Development',
-          icon: '⚡',
-          level: 90,
-          color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          icon: require('@/assets/frontend.png'),
+          level: 60,
+          color: 'linear-gradient(135deg, #2d3748 0%, #1a202c 100%)',
           description: 'Building responsive and interactive user interfaces'
         },
         {
-          name: 'Vue.js / React',
-          icon: '🎨',
-          level: 85,
-          color: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-          description: 'Modern JavaScript frameworks for dynamic applications'
-        },
-        {
-          name: 'UI/UX Design',
-          icon: '✨',
-          level: 80,
-          color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-          description: 'Creating beautiful and intuitive user experiences'
-        },
-        {
           name: 'Backend Development',
-          icon: '🚀',
-          level: 75,
-          color: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-          description: 'Server-side logic and API development'
+          icon: require('@/assets/backend.png'),
+          level: 45,
+          color: 'linear-gradient(135deg, #2d3748 0%, #4a5568 100%)',
+          description: 'Building robust server-side applications and RESTful APIs'
         },
         {
           name: 'Database Management',
-          icon: '💾',
-          level: 70,
-          color: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+          icon: require('@/assets/db.png'),
+          level: 45,
+          color: 'linear-gradient(135deg, #1a202c 0%, #2d3748 100%)',
           description: 'Designing and managing efficient databases'
         },
         {
-          name: 'DevOps & Deployment',
-          icon: '🔧',
+          name: 'Photoshop',
+          icon: require('@/assets/ps.png'),
           level: 65,
-          color: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
-          description: 'CI/CD pipelines and cloud deployment'
+          color: 'linear-gradient(135deg, #2c3e50 0%, #34495e 100%)',
+          description: 'Professional photo editing and image manipulation'
+        },
+        {
+          name: 'Illustrator',
+          icon: require('@/assets/ai.png'),
+          level: 45,
+          color: 'linear-gradient(135deg, #1e3a5f 0%, #2d4a6e 100%)',
+          description: 'Creating vector graphics and digital illustrations'
+        },
+        {
+          name: 'Video Editing',
+          icon: require('@/assets/vd.png'),
+          level: 35,
+          color: 'linear-gradient(135deg, #2c3e50 0%, #1a202c 100%)',
+          description: 'Producing and editing engaging video content'
         }
       ]
     }
@@ -183,16 +183,46 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  border-radius: 15px;
 }
 
 .skill-card:hover .icon-wrapper {
   transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-.icon-emoji {
-  font-size: 2rem;
+.skill-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+  filter: brightness(1.1);
+  border-radius: 15px;
+}
+
+.skill-card:hover .skill-image {
+  transform: scale(1.15);
 }
 
 .skill-name {

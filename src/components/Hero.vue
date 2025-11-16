@@ -48,6 +48,7 @@
       <div class="hero-right">
         <div class="profile-container">
           <div class="profile-image-wrapper">
+            <div class="profile-background-animated"></div>
             <div class="profile-border"></div>
             <div class="profile-image">
               <img 
@@ -58,6 +59,11 @@
               <div class="profile-overlay"></div>
             </div>
             <div class="profile-glow"></div>
+            <div class="profile-shapes">
+              <div class="shape shape-1"></div>
+              <div class="shape shape-2"></div>
+              <div class="shape shape-3"></div>
+            </div>
           </div>
           
           <div class="profile-badge">
@@ -88,7 +94,7 @@ export default {
       name: 'Your Name',
       title: 'Web Developer',
       description: 'I create beautiful, functional, and user-friendly web experiences that bring ideas to life.',
-      profileImage: require('@/assets/logo.png') // Replace with your profile image path
+      profileImage: require('@/assets/image.png') // Replace with your profile image path
     }
   },
   methods: {
@@ -387,6 +393,153 @@ export default {
   position: relative;
   width: 350px;
   height: 350px;
+}
+
+.profile-background-animated {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #667eea,
+    #764ba2,
+    #f093fb,
+    #f5576c,
+    #4facfe,
+    #00f2fe,
+    #667eea
+  );
+  background-size: 200% 200%;
+  animation: rotateGradient 10s linear infinite, pulseBackground 4s ease-in-out infinite;
+  z-index: 0;
+  opacity: 0.3;
+  filter: blur(20px);
+}
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseBackground {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
+}
+
+.profile-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  filter: blur(2px);
+}
+
+.shape-1 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #667eea, transparent);
+  top: 10%;
+  left: 20%;
+  animation: floatShape1 8s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #764ba2, transparent);
+  bottom: 15%;
+  right: 25%;
+  animation: floatShape2 10s ease-in-out infinite;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #f093fb, transparent);
+  top: 50%;
+  right: 10%;
+  animation: floatShape3 12s ease-in-out infinite;
+}
+
+@keyframes floatShape1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.2);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.8);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(20px, 30px) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+@keyframes floatShape2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(-40px, -20px) scale(1.3);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translate(30px, -40px) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+@keyframes floatShape3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(-25px, 25px) scale(1.2) rotate(90deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(25px, -25px) scale(0.8) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(-15px, -35px) scale(1.1) rotate(270deg);
+    opacity: 0.5;
+  }
 }
 
 .profile-border {
