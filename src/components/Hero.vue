@@ -18,7 +18,7 @@
           
           <h1 class="hero-title">
             <span class="name-line">
-              <span class="name">{{ name }}.</span>
+              <span class="name">Phyo Pyae Sone.</span>
             </span>
             <span class="title-line">
               <span class="title">{{ title }}</span>
