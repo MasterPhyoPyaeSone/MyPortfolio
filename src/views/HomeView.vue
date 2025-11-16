@@ -1,41 +1,41 @@
 <template>
-  <h1>Home</h1>
-  <!-- {{ posts }} -->
-   <div class="" v-if="posts.length > 0">
-     <div class="" v-for="post in posts" :key="post.id">
-        <AllPosts :post="post"></AllPosts>
-
-     </div>
-   </div>
-   <div class="" v-else>
-    <Loading></Loading>
-   </div>
-
-  <router-link :to="{name:'CreateForm'}"><button>Create Form</button></router-link>
-  
+  <div class="portfolio">
+    <Navigation />
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Contact />
+    <Footer />
+  </div>
 </template>
 
 <script>
-import Loading from '../components/Loading'
-// import Loading from '../components/Loading'
-import AllPosts from '../components/AllPosts.vue'
-import GetPosts from '@/composable/GetPosts'
-// @ is an alias to /src
+import Navigation from '@/components/Navigation.vue'
+import Hero from '@/components/Hero.vue'
+import About from '@/components/About.vue'
+import Skills from '@/components/Skills.vue'
+import Projects from '@/components/Projects.vue'
+import Contact from '@/components/Contact.vue'
+import Footer from '@/components/Footer.vue'
+
 
 export default {
+  name: 'HomeView',
   components: {
-    Loading,
-    // Loading,
-    
-    AllPosts,},
-    setup() {
-    
-    let {posts,load,error}=GetPosts();
-
-  
-    load();
-    return {posts,load,error}
-
-  },
-};
+    Navigation,
+    Hero,
+    About,
+    Skills,
+    Projects,
+    Contact,
+    Footer
+  }
+}
 </script>
+
+<style scoped>
+.portfolio {
+  scroll-behavior: smooth;
+}
+</style>
