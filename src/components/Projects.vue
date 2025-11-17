@@ -101,13 +101,13 @@ export default {
           id: 4,
           title: 'Portfolio Website',
           category: 'Featured Project',
-          image: require('@/assets/scan.jpeg'),
+          image: require('@/assets/port.png'),
 
-          description: 'A modern, responsive portfolio website with smooth animations, dark mode, and optimized performance.',
-          technologies: ['Vue.js', 'CSS3', 'GSAP'],
+          description: 'A curated collection of my best work in UI/UX design, branding, and digital product development. This portfolio showcases a commitment to clean aesthetics and impactful problem-solving, structured for easy viewing and deep dives.',
+          technologies: ['HTML', 'CSS', 'JavaScript','Vue.js'],
           gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
           live: '#',
-          github: '#'
+          github: 'https://github.com/MasterPhyoPyaeSone/MyPortfolio'
         }
       ]
     }

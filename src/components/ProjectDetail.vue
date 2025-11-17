@@ -172,7 +172,27 @@ export default {
                         'View detailed customer information'
                     ],
                     challenges: 'GitHub: MasterPhyoPyaeSone  :   Email: (phyo097800@gmail.com)   :   Phone: (09950336142)'
+                },
+                {
+                    id: 4,
+                    title: 'Portfolio Website',
+                    category: 'Featured Project',
+                    image: require('@/assets/port.png'),
+                    description: 'A curated collection of my best work in UI/UX design, branding, and digital product development. This portfolio showcases a commitment to clean aesthetics and impactful problem-solving, structured for easy viewing and deep dives.',
+                    overview: 'A portfolio website is your professional online showcase. Its primary goal is to present your best work, skills, and professional narrative in a visually compelling and easily accessible format. It acts as a centralized hub for potential employers, clients, or collaborators to quickly understand who you are, what you do, and the quality of your output.',
+                    technologies: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS', 'Vue.js'],
+                    gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                    live: '#',
+                    github: 'https://github.com/MasterPhyoPyaeSone/MyPortfolio',
+                    features: [
+                        'Responsive Design:',
+                        'Fast Loading Speed',
+                        'Clear Navigation',
+                        
+                    ],
+                    challenges: 'GitHub: MasterPhyoPyaeSone  :   Email: (phyo097800@gmail.com)   :   Phone: (09950336142)'
                 }
+
             ]
 
             this.project = projects.find(p => p.id === parseInt(projectId)) || null
